@@ -1,15 +1,17 @@
 import numpy as np
+from numpy.random import exponential
+
 
 class Bandit:
     # region Constructor
 
-    def __init__(self, arms_number: int = 10, use_sample_averages: bool = False, epsilon=0., initial_action_value_estimates=0., confidence_level=None,
+    def __init__(self, arms_number: int = 10, use_gradient: bool = False, epsilon=0., initial_action_value_estimates=0., confidence_level=None,
                  use_gradient: bool = False, step_size=0.1, use_gradient_baseline: bool = False, true_expected_reward=0.):
         # region Summary
         """
         k-armed Bandit.
         :param arms_number: (denoted as k) number of bandit's arms
-        :param use_sample_averages: if True, use sample-average method for estimating action values
+        :param use_gradient: if True, use sample-average method for estimating action values
         :param epsilon: (denoted as ε) probability for exploration in ε-greedy algorithm
         :param initial_action_value_estimates: (denoted as 𝑄_1(𝑎)) initial estimation for each action value
         :param confidence_level: (denoted as 𝑐) if not None, use Upper-Confidence-Bound (UCB) action selection
@@ -35,7 +37,7 @@ class Bandit:
 
         # region Sample-average Method
 
-        self.use_sample_averages = use_sample_averages
+        self.use_sample_averages = use_gradient
 
         # endregion Sample-average Method
 
@@ -91,7 +93,7 @@ class Bandit:
         self.optimal_action = None
 
         #Testing constructor call
-        print("Bandic class constructor print")
+        print("Bandit class constructor print")
         self.test_print()
         # endregion Body
 
@@ -144,6 +146,27 @@ class Bandit:
             return np.random.choice(self.actions)
 
         # endregion ε-greedy
+
+        # region UCB
+
+        if self.confidence_level is not None:
+            UCB_estimation = (self.estimated_action_values
+                              + self.confidence_level * np.sqrt(np.log(self.time + 1) / (self.action_selection_count + 1e-5)))
+
+
+
+        # endregion UCB
+
+        # region GBA
+
+        if self.use_gradient:
+            exponential_estimations = np.exp(self.estimated_action_values)
+
+            self.action_probability = exponential_estimations / np.sum(exponential_estimations)
+
+            return np.random.choice(self.actions, p=self.action_probability)
+
+        # endregion GBA
 
         # region Greedy
 

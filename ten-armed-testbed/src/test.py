@@ -1,4 +1,4 @@
-import bandit
+# import Bandit
 import numpy as np
 from tqdm import trange
 import matplotlib
@@ -8,7 +8,8 @@ import sys
 sys.path.append(r"C:\Users\asus\Desktop\ReinforcementLearning\ten-armed-testbed")
 matplotlib.use('Agg')
 
-f= bandit.Bandit()
+
+# f= Bandit()
 
 print("hwl")
 
@@ -71,7 +72,7 @@ plt.close()
 epsilions = [0, 0.1, 0.01]
 
 # Create a list of bandits (1 bandit for every epsilon) where every bandit uses sample-average method
-bandits = [bandit.Bandit(epsilon=epsilon, use_sample_averages=True) for epsilon in epsilions]
+bandits = [Bandit(epsilon=epsilon, use_sample_averages=True) for epsilon in epsilions]
 
 # Define number of runs
 runs = 2000
