@@ -45,5 +45,5 @@ This project implements **Dynamic Programming (DP)** methods—specifically **it
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/VArakelyan/Reinforcement-Learning-projects.git
-   cd Reinforcement-Learning-projects/gridworld-dp
+   git clone https://github.com/HakobyanSpartak/ReinforcementLearning.git
+   cd ReinforcementLearning/gridworld-dp
