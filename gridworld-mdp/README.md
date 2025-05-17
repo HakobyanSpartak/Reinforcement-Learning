@@ -46,5 +46,5 @@ This project explores the implementation of **Markov Decision Process (MDP)** so
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/VArakelyan/Reinforcement-Learning-projects.git
-   cd Reinforcement-Learning-projects/gridworld-mdp
+   git clone https://github.com/HakobyanSpartak/ReinforcementLearning.git
+   cd ReinforcementLearning/gridworld-mdp
