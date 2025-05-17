@@ -41,8 +41,8 @@ This is an RL-based implementation of the classic **Tic‑Tac‑Toe** game, deve
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/VArakelyan/Reinforcement-Learning-projects
-   cd Reinforcement-Learning-projects/tic-tac-toe
+   git clone https://github.com/HakobyanSpartak/ReinforcementLearning
+   cd ReinforcementLearning/project1/tic-tac-toe
    ```
 2. **Install dependencies**  
    ```bash
