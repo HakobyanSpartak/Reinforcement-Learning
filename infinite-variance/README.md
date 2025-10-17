@@ -15,3 +15,4 @@
   - `results/variance_curves.png` – compares the running error/variance of ordinary vs. weighted IS.
   - `results/log.csv` – per-episode data for custom analysis.
 - **Key insight:** Weighted IS normalises by cumulative weight, keeping variance bounded; ordinary IS does not, so its estimate can fluctuate without converging.
+  
