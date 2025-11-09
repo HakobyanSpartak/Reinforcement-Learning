@@ -82,10 +82,6 @@ This project explores:
 - Resource allocation and scheduling problems
 - Trade-offs between immediate and future rewards
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Author
 
 Spartak Hakobyan
